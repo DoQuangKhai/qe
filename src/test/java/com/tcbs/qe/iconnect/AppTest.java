@@ -1,38 +1,27 @@
 package com.tcbs.qe.iconnect;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import com.tcbs.qe.iconnect.Base;
+import com.tcbs.qe.iconnect.LoginSteps;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest extends Base {
+	LoginSteps loginPage;
+	
+	
+	@BeforeMethod
+	public void setupMethod() {
+		loginPage = new LoginSteps(driver);
+	}
+	
+	
+	@Test
+	public void testLogin() {
+		loginPage.login();
+	}
 }

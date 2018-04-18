@@ -6,14 +6,31 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
 	@FindBy (id = "username UID")
-	WebElement txtUsername;
+	private WebElement txtUsername;
 	
 	@FindBy (id = "password")
-	WebElement txtPassword;
+	private WebElement txtPassword;
 	
 	@FindBy (name = "submit")
-	WebElement btnLogin;
+	private WebElement btnLogin;
 	
 	@FindBy (xpath = "//*[@id=\"custom-login\"]/div[3]/button")
-	WebElement btnRegister;
+	private WebElement btnRegister;
+
+	public WebElement getTxtUsername() {
+		return txtUsername;
+	}
+
+	public WebElement getTxtPassword() {
+		return txtPassword;
+	}
+
+	public WebElement getBtnLogin() {
+		return btnLogin;
+	}
+
+	public WebElement getBtnRegister() {
+		return btnRegister;
+	}
+
 }
